@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fcd920ec5c1d74bb0eb7dc5905895b, type: 3}
+  m_Name: NewBTAsset
+  m_EditorClassIdentifier: 
+  m_serializedData: '{"$type":"Brainiac.BehaviourTree, Assembly-CSharp","Root":{"Position":{"x":0,"y":0},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Child":{"$type":"Brainiac.Sequence,
+    Assembly-CSharp","Position":{"x":10,"y":110},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Children":[{"$type":"Brainiac.DebugLog,
+    Assembly-CSharp","Level":"Info","Message":"hellow","Position":{"x":-80,"y":260},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"__UniqueID":"37a0761352af455c8cf21e1992b05cbc","Constraints":[{"$type":"Brainiac.BlackboardConstraint,
+    Assembly-CSharp","FirstValue":"","SecondValue":"","ConditionType":"Boolean","BooleanComparison":"IsTrue","NumericComparison":"Equal","ReferenceComparison":"IsNull","IsExpanded":true,"InvertResult":false}],"Services":[]},{"$type":"Brainiac.RunBehaviour,
+    Assembly-CSharp","Position":{"x":210,"y":260},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"BehaviourTreeID":"cb564a2cbbeb4c7cba34b8811fc3a90d","__UniqueID":"33aeb633c41d4b18a3ac71be21e56731","Constraints":[],"Services":[]}],"__UniqueID":"4a80c0a24d0844e3900b0284091bb147","Constraints":[],"Services":[]},"__UniqueID":null,"Constraints":[],"Services":[]}}'
+  m_canvasArea:
+    serializedVersion: 2
+    x: -540
+    y: -500
+    width: 1661
+    height: 1139
+  m_subtrees:
+  - asset: {fileID: 0}
+    assetID: 6b7cc046bfd04c6dbee27a19d53429bb
+  - asset: {fileID: 0}
+    assetID: 7edee465bfac41568e3cb36bfd22c555
+  - asset: {fileID: 0}
+    assetID: 09fb373dcfda46f3b0dba257324d7463
+  - asset: {fileID: 0}
+    assetID: cb564a2cbbeb4c7cba34b8811fc3a90d

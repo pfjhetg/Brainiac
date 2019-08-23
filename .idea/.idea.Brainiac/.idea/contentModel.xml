@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Administrator\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Administrator\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Brainiac.764704777.00" t="ExcludeRecursive" />
+    <e p="D:\WorkSpace\Brainiac" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Brainiac" t="Include">
+          <e p="Source" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Core" t="Include">
+                <e p="BehaviourTreeEditor.cs" t="Include" />
+                <e p="BTConstraintFactory.cs" t="Include" />
+                <e p="BTConstraintInspectorFactory.cs" t="Include" />
+                <e p="BTContextMenuFactory.cs" t="Include" />
+                <e p="BTEditorCanvas.cs" t="Include" />
+                <e p="BTEditorGraph.cs" t="Include" />
+                <e p="BTEditorGraphNode.cs" t="Include" />
+                <e p="BTEditorGrid.cs" t="Include" />
+                <e p="BTEditorStyle.cs" t="Include" />
+                <e p="BTEditorTreeLayout.cs" t="Include" />
+                <e p="BTEditorUtils.cs" t="Include" />
+                <e p="BTGraphNodeStyle.cs" t="Include" />
+                <e p="BTNavigationHistory.cs" t="Include" />
+                <e p="BTNodeFactory.cs" t="Include" />
+                <e p="BTNodeInspectorFactory.cs" t="Include" />
+                <e p="BTScriptCreationTool.cs" t="Include" />
+                <e p="BTServiceFactory.cs" t="Include" />
+                <e p="BTServiceInspectorFactory.cs" t="Include" />
+                <e p="BTUndoGroup.cs" t="Include" />
+                <e p="BTUndoState.cs" t="Include" />
+                <e p="BTUndoSystem.cs" t="Include" />
+                <e p="Undo" t="Include">
+                  <e p="UndoNodeCreated.cs" t="Include" />
+                  <e p="UndoNodeDeleted.cs" t="Include" />
+                  <e p="UndoNodeGroupPop.cs" t="Include" />
+                  <e p="UndoNodeGroupPush.cs" t="Include" />
+                  <e p="UndoNodeMoved.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Inspectors" t="Include">
+                <e p="AIAgentInspector.cs" t="Include" />
+                <e p="BlackboardConstraintInspector.cs" t="Include" />
+                <e p="BlackboardInspector.cs" t="Include" />
+                <e p="BTAssetInspector.cs" t="Include" />
+                <e p="BTEditorGraphNodeInspector.cs" t="Include" />
+                <e p="CompositeInspector.cs" t="Include" />
+                <e p="ConstraintInspector.cs" t="Include" />
+                <e p="DesignTimeBlackboardInspector.cs" t="Include" />
+                <e p="IBlackboardInspector.cs" t="Include" />
+                <e p="NodeGroupInspector.cs" t="Include" />
+                <e p="NodeInspector.cs" t="Include" />
+                <e p="ParallelNodeInspector.cs" t="Include" />
+                <e p="PlayTimeBlackboardInspector.cs" t="Include" />
+                <e p="RunBehaviourInspector.cs" t="Include" />
+                <e p="ServiceInspector.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="Action" t="Include">
+                <e p="DebugLog.cs" t="Include" />
+                <e p="RunBehaviour.cs" t="Include" />
+                <e p="Wait.cs" t="Include" />
+                <e p="YieldOneFrame.cs" t="Include" />
+              </e>
+              <e p="Composite" t="Include">
+                <e p="Parallel.cs" t="Include" />
+                <e p="Random.cs" t="Include" />
+                <e p="Selector.cs" t="Include" />
+                <e p="Sequence.cs" t="Include" />
+                <e p="WeightedRandom.cs" t="Include" />
+              </e>
+              <e p="Conditions" t="Include">
+                <e p="BlackboardConstraint.cs" t="Include" />
+              </e>
+              <e p="Core" t="Include">
+                <e p="Action.cs" t="Include" />
+                <e p="AddMenuAttribute.cs" t="Include" />
+                <e p="AIAgent.cs" t="Include" />
+                <e p="BehaviourNode.cs" t="Include" />
+                <e p="BehaviourNodeStatus.cs" t="Include" />
+                <e p="BehaviourTree.cs" t="Include" />
+                <e p="Blackboard.cs" t="Include" />
+                <e p="BooleanComparison.cs" t="Include" />
+                <e p="BTAsset.cs" t="Include" />
+                <e p="Composite.cs" t="Include" />
+                <e p="ConditionValueType.cs" t="Include" />
+                <e p="Constraint.cs" t="Include" />
+                <e p="DebugOptions.cs" t="Include" />
+                <e p="Decorator.cs" t="Include" />
+                <e p="Memory.cs" t="Include" />
+                <e p="MemoryVar.cs" t="Include" />
+                <e p="NodeGroup.cs" t="Include" />
+                <e p="NumericComparison.cs" t="Include" />
+                <e p="ReferenceComparison.cs" t="Include" />
+                <e p="Root.cs" t="Include" />
+                <e p="Service.cs" t="Include" />
+                <e p="UpdateMode.cs" t="Include" />
+              </e>
+              <e p="Decorator" t="Include">
+                <e p="AlwaysFail.cs" t="Include" />
+                <e p="AlwaysSucceed.cs" t="Include" />
+                <e p="Invert.cs" t="Include" />
+                <e p="Limiter.cs" t="Include" />
+                <e p="Repeat.cs" t="Include" />
+                <e p="RepeatForever.cs" t="Include" />
+                <e p="UntilFailure.cs" t="Include" />
+                <e p="UntilSuccess.cs" t="Include" />
+              </e>
+              <e p="Serialization" t="Include">
+                <e p="BTHideInInspectorAttribute.cs" t="Include" />
+                <e p="BTIgnoreAttribute.cs" t="Include" />
+                <e p="BTOptInAttribute.cs" t="Include" />
+                <e p="BTPropertyAttribute.cs" t="Include" />
+                <e p="DataReaderProvider.cs" t="Include" />
+                <e p="DataWriterProvider.cs" t="Include" />
+                <e p="IDataReader.cs" t="Include" />
+                <e p="IDataWriter.cs" t="Include" />
+                <e p="IJsonSerializable.cs" t="Include" />
+                <e p="JsonDataReader.cs" t="Include" />
+                <e p="JsonDataWriter.cs" t="Include" />
+                <e p="JsonReader.cs" t="Include" />
+                <e p="JsonReaderSettings.cs" t="Include" />
+                <e p="JsonSerializationException.cs" t="Include" />
+                <e p="JsonToken.cs" t="Include" />
+                <e p="JsonWriter.cs" t="Include" />
+                <e p="JsonWriterSettings.cs" t="Include" />
+                <e p="ReferenceHandler.cs" t="Include" />
+                <e p="TypeCoercionUtility.cs" t="Include" />
+              </e>
+              <e p="Utility" t="Include">
+                <e p="BTUtils.cs" t="Include" />
+                <e p="EnumExtensions.cs" t="Include" />
+                <e p="FixedSizeStack.cs" t="Include" />
+                <e p="Tuple.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scene" t="Include">
+          <e p="NewBehaviourScript.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Brainiac.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
