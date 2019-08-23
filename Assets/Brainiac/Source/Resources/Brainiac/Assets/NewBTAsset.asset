@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: NewBTAsset
   m_EditorClassIdentifier: 
   m_serializedData: '{"$type":"Brainiac.BehaviourTree, Assembly-CSharp","Root":{"Position":{"x":0,"y":0},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Child":{"$type":"Brainiac.Sequence,
-    Assembly-CSharp","Position":{"x":10,"y":110},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Children":[{"$type":"Brainiac.DebugLog,
+    Assembly-CSharp","Position":{"x":20,"y":110},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Children":[{"$type":"Brainiac.RunBehaviour,
+    Assembly-CSharp","Position":{"x":200,"y":190},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"BehaviourTreeID":"cb564a2cbbeb4c7cba34b8811fc3a90d","__UniqueID":"33aeb633c41d4b18a3ac71be21e56731","Constraints":[],"Services":[]},{"$type":"Brainiac.DebugLog,
     Assembly-CSharp","Level":"Info","Message":"hellow","Position":{"x":-80,"y":260},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"__UniqueID":"37a0761352af455c8cf21e1992b05cbc","Constraints":[{"$type":"Brainiac.BlackboardConstraint,
-    Assembly-CSharp","FirstValue":"","SecondValue":"","ConditionType":"Boolean","BooleanComparison":"IsTrue","NumericComparison":"Equal","ReferenceComparison":"IsNull","IsExpanded":true,"InvertResult":false}],"Services":[]},{"$type":"Brainiac.RunBehaviour,
-    Assembly-CSharp","Position":{"x":210,"y":260},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"BehaviourTreeID":"cb564a2cbbeb4c7cba34b8811fc3a90d","__UniqueID":"33aeb633c41d4b18a3ac71be21e56731","Constraints":[],"Services":[]}],"__UniqueID":"4a80c0a24d0844e3900b0284091bb147","Constraints":[],"Services":[]},"__UniqueID":null,"Constraints":[],"Services":[]}}'
+    Assembly-CSharp","FirstValue":"","SecondValue":"","ConditionType":"Boolean","BooleanComparison":"IsTrue","NumericComparison":"Equal","ReferenceComparison":"IsNull","IsExpanded":true,"InvertResult":false}],"Services":[]}],"__UniqueID":"4a80c0a24d0844e3900b0284091bb147","Constraints":[],"Services":[]},"__UniqueID":null,"Constraints":[],"Services":[]}}'
   m_canvasArea:
     serializedVersion: 2
     x: -540

@@ -24,7 +24,7 @@ namespace BrainiacEditor
         private BTEditorGraph m_graph;
 
         /// <summary>
-        /// ???
+        /// 画布控制（事件，布局等）
         /// </summary>
         private BTEditorCanvas m_canvas;
 
@@ -116,9 +116,9 @@ namespace BrainiacEditor
                 {
                     m_btAsset = asset;
                     m_graph.SetBehaviourTree(behaviourTree);
-					m_canvas.Area = m_btAsset.CanvasArea;
-					m_canvas.CenterOnPosition(behaviourTree.Root.Position, position.size);
-					m_canvas.IsDebuging = false;
+                    m_canvas.Area = m_btAsset.CanvasArea;
+                    m_canvas.CenterOnPosition(behaviourTree.Root.Position, position.size);
+                    m_canvas.IsDebuging = false;
 
                     if (clearNavigationHistory)
                     {
@@ -214,6 +214,7 @@ namespace BrainiacEditor
             {
                 m_btAsset.CanvasArea = m_canvas.Area;
                 m_btAsset.Serialize();
+                // 标记更改，通知内部需要存盘
                 EditorUtility.SetDirty(m_btAsset);
             }
         }
