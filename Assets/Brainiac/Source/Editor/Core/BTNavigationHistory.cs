@@ -197,7 +197,11 @@ namespace BrainiacEditor
             m_recentFiles.Clear();
             if (!string.IsNullOrEmpty(saveData))
             {
-                string[] paths = m_serializedHistory.Split(new char[] {';'}, StringSplitOptions.RemoveEmptyEntries);
+                // 原来的代码
+//                string[] paths = m_serializedHistory.Split(new char[] {';'}, StringSplitOptions.RemoveEmptyEntries);
+                // 修改后的代码
+                string[] paths = saveData.Split(new char[] {';'}, StringSplitOptions.RemoveEmptyEntries);
+
                 foreach (var path in paths)
                 {
                     if (System.IO.File.Exists(Application.dataPath + path.Substring(6)))

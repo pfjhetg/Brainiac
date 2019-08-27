@@ -3,6 +3,9 @@ using Brainiac;
 
 namespace BrainiacEditor
 {
+	/// <summary>
+	/// 图表用到的GUI风格
+	/// </summary>
 	public class BTGraphNodeStyle
 	{
 		private const float VERT_MAX_NODE_WIDTH = 180;
@@ -24,6 +27,7 @@ namespace BrainiacEditor
 		private GUIStyle m_successNormalStyle;
 		private GUIStyle m_successSelectedStyle;
 
+		// 样式名字
 		private string m_standardNormalStyleName;
 		private string m_standardSelectedStyleName;
 		private string m_failNormalStyleName;

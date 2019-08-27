@@ -3,191 +3,191 @@ using UnityEngine.Events;
 
 namespace Brainiac
 {
-	[RequireComponent(typeof(Blackboard))]
-	public class AIAgent : MonoBehaviour 
-	{
-		public event UnityAction BeforeUpdate;
-		public event UnityAction AfterUpdate;
+    [RequireComponent(typeof(Blackboard))]
+    public class AIAgent : MonoBehaviour
+    {
+        public event UnityAction BeforeUpdate;
+        public event UnityAction AfterUpdate;
 
-		[SerializeField]
-		private BTAsset m_behaviourTree;
-		[SerializeField]
-		private GameObject m_body;
-		[SerializeField]
-		private UpdateMode m_updateMode;
-		[SerializeField]
-		private float m_updateInterval;
-		[SerializeField]
-		private bool m_debugMode;
+        /// <summary>
+        /// 行为树源数据（配置文件）
+        /// </summary>
+        [SerializeField] private BTAsset m_behaviourTree;
 
-		private BehaviourTree m_btInstance;
-		private Blackboard m_blackboard;
-		private float m_timeElapsedSinceLastUpdate;
-		private bool m_isRunning;
+        [SerializeField] private GameObject m_body;
+        [SerializeField] private UpdateMode m_updateMode;
+        [SerializeField] private float m_updateInterval;
+        /// <summary>
+        /// 调试模式，可以断点暂停
+        /// </summary>
+        [SerializeField] private bool m_debugMode;
 
-		public GameObject Body
-		{
-			get
-			{
-				return m_body != null ? m_body : gameObject;
-			}
-		}
+        /// <summary>
+        /// 行为树类
+        /// </summary>
+        private BehaviourTree m_btInstance;
 
-		public Blackboard Blackboard
-		{
-			get
-			{
-				return m_blackboard;
-			}
-		}
-		
-		public bool DebugMode
-		{
-			get
-			{
-				return m_debugMode;
-			}
-			set
-			{
-				m_debugMode = value;
-			}
-		}
+        private Blackboard m_blackboard;
+        private float m_timeElapsedSinceLastUpdate;
+        private bool m_isRunning;
 
-		private void Awake()
-		{
-			m_blackboard = gameObject.GetComponent<Blackboard>();
+        public GameObject Body
+        {
+            get { return m_body != null ? m_body : gameObject; }
+        }
 
-			if(m_behaviourTree != null)
-			{
-				m_btInstance = m_behaviourTree.CreateRuntimeTree();
-			}
+        public Blackboard Blackboard
+        {
+            get { return m_blackboard; }
+        }
 
-			m_timeElapsedSinceLastUpdate = 0.0f;
-			m_isRunning = true;
-		}
+        public bool DebugMode
+        {
+            get { return m_debugMode; }
+            set { m_debugMode = value; }
+        }
 
-		private void Start()
-		{
-			if(m_btInstance != null)
-			{
-				m_btInstance.Root.OnStart(this);
-			}
-		}
+        private void Awake()
+        {
+            m_blackboard = gameObject.GetComponent<Blackboard>();
 
-		private void Update()
-		{
-			if(m_updateMode != UpdateMode.Manual && m_isRunning)
-			{
-				if(m_updateMode == UpdateMode.EveryFrame || m_timeElapsedSinceLastUpdate >= m_updateInterval)
-				{
-					UpdateInternal();
-					m_timeElapsedSinceLastUpdate = 0.0f;
-				}
+            if (m_behaviourTree != null)
+            {
+                // 根据配置文件初始化出行为树
+                m_btInstance = m_behaviourTree.CreateRuntimeTree();
+            }
 
-				m_timeElapsedSinceLastUpdate += Time.deltaTime;
-			}
-		}
+            m_timeElapsedSinceLastUpdate = 0.0f;
+            m_isRunning = true;
+        }
 
-		private void UpdateInternal()
-		{
-			if(m_btInstance != null)
-			{
-				RaiseBeforeUpdateEvent();
+        private void Start()
+        {
+            if (m_btInstance != null)
+            {
+                m_btInstance.Root.OnStart(this);
+            }
+        }
 
-				if(m_btInstance.Root.Status != BehaviourNodeStatus.Running)
-				{
-					m_btInstance.Root.OnReset();
-				}
-				m_btInstance.Root.Run(this);
+        private void Update()
+        {
+            if (m_updateMode != UpdateMode.Manual && m_isRunning)
+            {
+                if (m_updateMode == UpdateMode.EveryFrame | m_timeElapsedSinceLastUpdate >= m_updateInterval)
+                {
+                    UpdateInternal();
+                    m_timeElapsedSinceLastUpdate = 0.0f;
+                }
 
-				RaiseAfterUpdateEvent();
-			}
-		}
+                m_timeElapsedSinceLastUpdate += Time.deltaTime;
+            }
+        }
 
-		public void Stop()
-		{
-			if(m_updateMode != UpdateMode.Manual)
-			{
-				m_timeElapsedSinceLastUpdate = 0.0f;
-				m_isRunning = false;
-				if(m_btInstance != null)
-				{
-					m_btInstance.Root.OnReset();
-				}
-			}
+        /// <summary>
+        /// 逻辑循环入口
+        /// </summary>
+        private void UpdateInternal()
+        {
+            if (m_btInstance != null)
+            {
+                RaiseBeforeUpdateEvent();
+
+                if (m_btInstance.Root.Status != BehaviourNodeStatus.Running)
+                {
+                    m_btInstance.Root.OnReset();
+                }
+
+                // 从树的根部开始按照逻辑调用子树的行为
+                m_btInstance.Root.Run(this);
+
+                RaiseAfterUpdateEvent();
+            }
+        }
+
+        public void Stop()
+        {
+            if (m_updateMode != UpdateMode.Manual)
+            {
+                m_timeElapsedSinceLastUpdate = 0.0f;
+                m_isRunning = false;
+                if (m_btInstance != null)
+                {
+                    m_btInstance.Root.OnReset();
+                }
+            }
 #if UNITY_EDITOR
-			else
-			{
-				if(m_btInstance != null)
-				{
-					m_btInstance.Root.OnReset();
-				}
-			}
+            else
+            {
+                if (m_btInstance != null)
+                {
+                    m_btInstance.Root.OnReset();
+                }
+            }
 #endif
-		}
+        }
 
-		public void Pause()
-		{
-			if(m_updateMode != UpdateMode.Manual)
-			{
-				m_isRunning = false;
-			}
+        public void Pause()
+        {
+            if (m_updateMode != UpdateMode.Manual)
+            {
+                m_isRunning = false;
+            }
 #if UNITY_EDITOR
-			else
-			{
-				Debug.LogWarning("Can't pause AIAgent! Update mode is set to 'Manual'.", this);
-			}
+            else
+            {
+                Debug.LogWarning("Can't pause AIAgent! Update mode is set to 'Manual'.", this);
+            }
 #endif
-		}
+        }
 
-		public void Resume()
-		{
-			if(m_updateMode != UpdateMode.Manual)
-			{
-				m_isRunning = true;
-			}
+        public void Resume()
+        {
+            if (m_updateMode != UpdateMode.Manual)
+            {
+                m_isRunning = true;
+            }
 #if UNITY_EDITOR
-			else
-			{
-				Debug.LogWarning("Can't resume AIAgent! Update mode is set to 'Manual'.", this);
-			}
+            else
+            {
+                Debug.LogWarning("Can't resume AIAgent! Update mode is set to 'Manual'.", this);
+            }
 #endif
-		}
+        }
 
-		public void Tick()
-		{
-			if(m_updateMode == UpdateMode.Manual)
-			{
-				UpdateInternal();
-			}
+        public void Tick()
+        {
+            if (m_updateMode == UpdateMode.Manual)
+            {
+                UpdateInternal();
+            }
 #if UNITY_EDITOR
-			else
-			{
-				Debug.LogWarning("Can't tick AIAgent! Update mode needs to be set to 'Manual'.", this);
-			}
+            else
+            {
+                Debug.LogWarning("Can't tick AIAgent! Update mode needs to be set to 'Manual'.", this);
+            }
 #endif
-		}
+        }
 
 #if UNITY_EDITOR
-		public BehaviourTree GetBehaviourTree()
-		{
-			return m_btInstance;
-		}
+        public BehaviourTree GetBehaviourTree()
+        {
+            return m_btInstance;
+        }
 #endif
-		private void RaiseBeforeUpdateEvent()
-		{
-			if(BeforeUpdate != null)
-			{
-				BeforeUpdate();
-			}
-		}
+        private void RaiseBeforeUpdateEvent()
+        {
+            if (BeforeUpdate != null)
+            {
+                BeforeUpdate();
+            }
+        }
 
-		private void RaiseAfterUpdateEvent()
-		{
-			if(AfterUpdate != null)
-			{
-				AfterUpdate();
-			}
-		}
-	}
+        private void RaiseAfterUpdateEvent()
+        {
+            if (AfterUpdate != null)
+            {
+                AfterUpdate();
+            }
+        }
+    }
 }

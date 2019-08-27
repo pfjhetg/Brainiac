@@ -112,68 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1066699839
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1066699842}
-  - component: {fileID: 1066699841}
-  - component: {fileID: 1066699840}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1066699840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066699839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ff2ce0b18c1184bb651100cf4b8211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_behaviourTree: {fileID: 11400000, guid: 3fed2ed13f3cad2478c53f3a452fc954, type: 2}
-  m_body: {fileID: 1066699839}
-  m_updateMode: 0
-  m_updateInterval: 0
-  m_debugMode: 0
---- !u!114 &1066699841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066699839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47465b2c5442f540a64c7da33f4b199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_startMemory: []
---- !u!4 &1066699842
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066699839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1295376717
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,27 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47465b2c5442f540a64c7da33f4b199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startMemory:
-  - m_name: 111
-    m_type: 0
-    m_valueBool: 1
-    m_valueInteger: 0
-    m_valueFloat: 0
-    m_valueString: 
-    m_valueVector2: {x: 0, y: 0}
-    m_valueVector3: {x: 0, y: 0, z: 0}
-    m_valueGameObject: {fileID: 0}
-    m_valueAsset: {fileID: 0}
-  - m_name: sss
-    m_type: 3
-    m_valueBool: 1
-    m_valueInteger: 0
-    m_valueFloat: 0
-    m_valueString: 333
-    m_valueVector2: {x: 0, y: 0}
-    m_valueVector3: {x: 0, y: 0, z: 0}
-    m_valueGameObject: {fileID: 0}
-    m_valueAsset: {fileID: 0}
+  m_startMemory: []
 --- !u!114 &1295376721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,9 +171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_behaviourTree: {fileID: 11400000, guid: 10185df4df28b1540bad31293f207ed0, type: 2}
   m_body: {fileID: 1295376717}
-  m_updateMode: 1
+  m_updateMode: 0
   m_updateInterval: 1
-  m_debugMode: 0
+  m_debugMode: 1
 --- !u!1 &1598882392
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,17 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fcd920ec5c1d74bb0eb7dc5905895b, type: 3}
   m_Name: NewBTAsset2
   m_EditorClassIdentifier: 
-  m_serializedData: '{"$type":"Brainiac.BehaviourTree, Assembly-CSharp","Root":{"Position":{"x":0,"y":0},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Child":{"$type":"Brainiac.Parallel,
-    Assembly-CSharp","FailOnAny":true,"SucceedOnAny":false,"FailOnTie":true,"Position":{"x":10,"y":110},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Children":[{"$type":"Brainiac.DebugLog,
-    Assembly-CSharp","Level":"Info","Message":null,"Position":{"x":-160,"y":180},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"__UniqueID":"5c33db9b4c524018ba1fb98374ecf806","Constraints":[],"Services":[]},{"$type":"Brainiac.Wait,
-    Assembly-CSharp","Position":{"x":70,"y":190},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Duration":"","__UniqueID":"09fa4fef49304ea091716ab97888b140","Constraints":[],"Services":[]},{"$type":"Brainiac.RunBehaviour,
-    Assembly-CSharp","Position":{"x":230,"y":180},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"BehaviourTreeID":"972b5962641f4808a466a6782c28da3d","__UniqueID":"0eebff573607403086f8cf55e7be0650","Constraints":[],"Services":[]}],"__UniqueID":"3b01fbe8c45a4110a7d4de7243e3e535","Constraints":[],"Services":[]},"__UniqueID":null,"Constraints":[],"Services":[]}}'
+  m_serializedData: '{"$type":"Brainiac.BehaviourTree, Assembly-CSharp","Root":{"Position":{"x":0,"y":0},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"Child":{"$type":"Brainiac.DebugLog,
+    Assembly-CSharp","Level":"Info","Message":"hahah","Position":{"x":-90,"y":130},"Name":null,"Comment":null,"Breakpoint":"None","Weight":0,"__UniqueID":"4ea7ef6e0b324358aabb2be1ca4cc26b","Constraints":[],"Services":[]},"__UniqueID":null,"Constraints":[],"Services":[]}}'
   m_canvasArea:
     serializedVersion: 2
     x: -500
     y: -500
     width: 1591
-    height: 1031
+    height: 1148
   m_subtrees:
   - asset: {fileID: 0}
     assetID: 972b5962641f4808a466a6782c28da3d

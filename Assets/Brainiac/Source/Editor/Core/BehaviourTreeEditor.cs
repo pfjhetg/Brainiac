@@ -9,20 +9,26 @@ namespace BrainiacEditor
     /// </summary>
     public class BehaviourTreeEditor : EditorWindow
     {
+        /// <summary>
+        /// 背景贴图
+        /// </summary>
         [SerializeField] private Texture m_gridTexture;
+        /// <summary>
+        /// 行为树数据结构
+        /// </summary>
         [SerializeField] private BTAsset m_btAsset;
+        /// <summary>
+        /// 导航历史
+        /// </summary>
         [SerializeField] private BTNavigationHistory m_navigationHistory;
-
         /// <summary>
         /// 背景网格
         /// </summary>
         private BTEditorGrid m_grid;
-
         /// <summary>
         /// 可编辑图表数据源
         /// </summary>
         private BTEditorGraph m_graph;
-
         /// <summary>
         /// 画布控制（事件，布局等）
         /// </summary>
@@ -180,6 +186,9 @@ namespace BrainiacEditor
             EditorUtility.DisplayDialog("Error", message, "Close");
         }
 
+        /// <summary>
+        /// 指定目录创建新的asset
+        /// </summary>
         public void CreateNewBehaviourTree()
         {
             string path = EditorUtility.SaveFilePanelInProject("Create new behaviour tree", "behaviour_tree", "asset", "");
@@ -194,6 +203,9 @@ namespace BrainiacEditor
             }
         }
 
+        /// <summary>
+        /// 打开新的路径的asset
+        /// </summary>
         public void OpenBehaviourTree()
         {
             string path = EditorUtility.OpenFilePanel("Open behaviour tree", "", "asset");
@@ -239,11 +251,16 @@ namespace BrainiacEditor
         {
             if (m_btAsset != null)
             {
+                // 顶部导航
                 Rect navHistoryRect = new Rect(0.0f, 0.0f, position.width, 20.0f);
+                // 顶部导航的设置按钮
                 Rect optionsRect = new Rect(position.width - 20.0f, 0.0f, 20.0f, 20.0f);
+                // 底部显示路径的位置
                 Rect footerRect = new Rect(0.0f, position.height - 18.0f, position.width, 20.0f);
+                // 显示树的画布
                 Rect canvasRect = new Rect(0.0f, navHistoryRect.yMax, position.width, position.height - (footerRect.height + navHistoryRect.height));
 
+                // 元素GUI风格设置
                 BTEditorStyle.EnsureStyle();
                 m_grid.DrawGUI(position.size);
                 m_graph.DrawGUI(canvasRect);

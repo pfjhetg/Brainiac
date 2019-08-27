@@ -83,7 +83,7 @@ namespace Brainiac
 
         public BehaviourTree CreateRuntimeTree()
         {
-            /// 反序列化行为树Asset文件
+            // 反序列化行为树Asset文件
             BehaviourTree tree = BTUtils.DeserializeTree(m_serializedData);
             if (tree == null)
                 tree = new BehaviourTree();
